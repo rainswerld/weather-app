@@ -32,6 +32,7 @@ main {
 }
 
 .search-bar .search-input {
+  font-family: 'Staatliches', sans-serif;
   display: block;
   width: 100%;
   padding: 15px;
