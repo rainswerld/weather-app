@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import api from './apiConfig'
+import Search from './Search/Search.js'
+import Location from './Location/Location.js'
+import Temp from './Temp/Temp.js'
+import Weather from './Weather/Weather.js'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Search />
+      <Location />
+      <Temp />
+      <Weather />
     </div>
   );
 }
