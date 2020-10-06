@@ -9,10 +9,12 @@ import Weather from './Weather/Weather.js'
 function App() {
   return (
     <div className="app">
-      <Search />
-      <Location />
-      <Temp />
-      <Weather />
+      <main>
+        <Search />
+        <Location />
+        <Temp />
+        <Weather />
+      </main>
     </div>
   );
 }
