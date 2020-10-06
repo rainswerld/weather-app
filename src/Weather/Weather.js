@@ -2,8 +2,10 @@ import React from 'react'
 
 function Weather() {
   return (
-    <div>
-      I am the weather
+    <div className="weather-box">
+      <div className="weather">
+        Sunny
+      </div>
     </div>
   )
 }

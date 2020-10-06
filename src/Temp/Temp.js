@@ -2,8 +2,10 @@ import React from 'react'
 
 function Temp() {
   return (
-    <div>
-      I am the temperature
+    <div className="temp-box">
+      <div className="temp">
+        5°F
+      </div>
     </div>
   )
 }
