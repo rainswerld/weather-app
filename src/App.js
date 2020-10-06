@@ -1,19 +1,36 @@
-import React from 'react';
-import './App.css';
+import React, { useEffect, useState } from 'react'
+import Unsplash, { toJson } from 'unsplash-js'
+import fetch from 'node-fetch'
+import './App.css'
 import api from './apiConfig'
-import Search from './Search/Search.js'
-import Location from './Location/Location.js'
-import Temp from './Temp/Temp.js'
 import Weather from './Weather/Weather.js'
 
+global.fetch = fetch
+
+const unsplash = new Unsplash({ accessKey: 'vRrjM47nn30k5-Et_4_ntkapy8oxBLWpbGGkiS7EzNw' })
+
 function App() {
+
+  const [image, setImage] = useState([])
+  const [name, setName] = useState('')
+
+  useEffect(() => {
+    unsplash.photos.getRandomPhoto({ query: 'nature' })
+      .then(toJson)
+      .then(res => {
+        console.log(res)
+        setImage(res.urls.full)
+        setName(res.user.name)
+      })
+  }, [])
+
   return (
-    <div className="app">
+    <div className="app" style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'bottom' }}>
       <main>
-        <Search />
-        <Location />
-        <Temp />
         <Weather />
+        <div className="photo-cred">
+          <p>Photo by {name}</p>
+        </div>
       </main>
     </div>
   );
