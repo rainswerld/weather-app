@@ -51,7 +51,7 @@ function Weather() {
         />
       </div>
       {(typeof weather.main != "undefined") ? (
-        <div>
+        <div className="full-report">
           <div className="location-box">
             <div className="location">
               {weather.name}, {weather.sys.country}
@@ -68,16 +68,16 @@ function Weather() {
               {Math.round(weather.main.temp)}°F
             </div>
           </div>
-          <div className="temp-range-box">
-            <div className="temp-range">
-              H:{Math.round(weather.main.temp_max)}°F  L:{Math.round(weather.main.temp_min)}°F
-              <br />
-              Feels Like: {Math.round(weather.main.feels_like)}°F
-            </div>
-          </div>
           <div className="weather-box">
             <div className="weather">
               {weather.weather[0].description}
+            </div>
+          </div>
+          <div className="temp-range-box">
+            <div className="temp-range">
+              H: {Math.round(weather.main.temp_max)}°F  L: {Math.round(weather.main.temp_min)}°F
+              <br />
+              Feels Like: {Math.round(weather.main.feels_like)}°F
             </div>
           </div>
         </div>

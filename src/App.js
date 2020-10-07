@@ -15,7 +15,7 @@ function App() {
   const [name, setName] = useState('')
 
   useEffect(() => {
-    unsplash.photos.getRandomPhoto({ query: 'nature' })
+    unsplash.photos.getRandomPhoto({ query: 'epic nature' })
       .then(toJson)
       .then(res => {
         setImage(res.urls.regular)
