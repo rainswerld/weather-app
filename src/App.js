@@ -18,14 +18,13 @@ function App() {
     unsplash.photos.getRandomPhoto({ query: 'nature' })
       .then(toJson)
       .then(res => {
-        console.log(res)
-        setImage(res.urls.full)
+        setImage(res.urls.regular)
         setName(res.user.name)
       })
   }, [])
 
   return (
-    <div className="app" style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'bottom' }}>
+    <div className="app" style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'bottom', transition: 'ease-in' }}>
       <main>
         <Weather />
         <div className="photo-cred">
